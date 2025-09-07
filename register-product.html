@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro de Producto • TechFact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="business-frontpage.css">
+</head>
+<body>
+  <!-- Navbar consistente -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index_business.html">
+        <i class="bi bi-phone me-2"></i> TechFact
+      </a>
+      <div class="collapse navbar-collapse show">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index_business.html#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index_business.html#buscar">Buscar</a></li>
+          <li class="nav-item"><a class="nav-link" href="register-user.html">Registrar usuario</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección principal con imagen de fondo completa -->
+  <section id="inicio" class="hero-section3">
+    <div class="container-fluid h-100">
+      <div class="row h-100 align-items-center">
+        <!-- Columna izquierda - Texto promocional -->
+        <div class="col-lg-6">
+          <div class="px-5">
+            <h1 class="display-5 fw-bold mb-3 text-white">Registra tu dispositivo en TechFact</h1>
+            <p class="lead mb-4 text-white">Protege tu inversión y facilita futuras transacciones con confianza.</p>
+            
+            <div class="mb-4">
+              <h2 class="fw-bold mb-3 text-white">Protección completa</h2>
+              <p class="lead mb-4 text-white">Registra teléfonos y computadores para crear un historial verificable.</p>
+            </div>
+
+            <div class="mb-4">
+              <h2 class="fw-bold mb-3 text-white">Reporte de robos</h2>
+              <p class="lead mb-4 text-white">Marca dispositivos robados para proteger a otros compradores.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Columna derecha - Formulario -->
+        <div class="col-lg-6">
+          <div class="px-5">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <h3 class="card-title mb-4"><i class="bi bi-plus-square me-2 text-success"></i>Registro de Dispositivo</h3>
+                <form id="formProducto" novalidate>
+                  <div class="mb-3">
+                    <label for="tipoProducto" class="form-label">Tipo de dispositivo *</label>
+                    <select class="form-select" id="tipoProducto">
+                      <option value="">Selecciona el tipo</option>
+                      <option value="Teléfono">Teléfono</option>
+                      <option value="Computador">Computador</option>
+                    </select>
+                    <div class="error-message" id="tipoProductoError"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="marcaProducto" class="form-label">Marca *</label>
+                        <input type="text" class="form-control" id="marcaProducto" placeholder="Ej: Samsung, Apple">
+                        <div class="error-message" id="marcaProductoError"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="modeloProducto" class="form-label">Modelo *</label>
+                        <input type="text" class="form-control" id="modeloProducto" placeholder="Ej: Galaxy S23">
+                        <div class="error-message" id="modeloProductoError"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="anioProducto" class="form-label">Año *</label>
+                        <input type="number" class="form-control" id="anioProducto" placeholder="2023" min="2000" max="2025">
+                        <div class="error-message" id="anioProductoError"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="precioProducto" class="form-label">Precio *</label>
+                        <input type="number" class="form-control" id="precioProducto" placeholder="0" min="0" step="0.01">
+                        <div class="error-message" id="precioProductoError"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="serieProducto" class="form-label">Número de serie *</label>
+                    <input type="text" class="form-control" id="serieProducto" placeholder="Número único del dispositivo">
+                    <div class="error-message" id="serieProductoError"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="robadoProducto">
+                        <label class="form-check-label text-danger" for="robadoProducto"><i class="bi bi-exclamation-triangle me-1"></i>Reportar como robado</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="ventaProducto">
+                        <label class="form-check-label text-success" for="ventaProducto"><i class="bi bi-tag me-1"></i>Disponible para venta</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-success w-100 btn-custom">
+                    <i class="bi bi-plus-circle me-2"></i>Registrar Dispositivo
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer igual al de la home -->
+  <footer id="contacto" class="footer">
+    <div class="container">
+      <!-- (mismo contenido que el footer de index_business.html) -->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-phone me-2"></i>TechFact</h5>
+          <p>Plataforma segura para el registro y verificación de dispositivos móviles y computadores.</p>
+          <div class="d-flex">
+            <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-5"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-linkedin fs-5"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h6 class="fw-bold mb-3">Enlaces</h6>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="index_business.html#inicio">Inicio</a></li>
+            <li class="mb-2"><a href="index_business.html#como-funciona">¿Cómo funciona?</a></li>
+            <li class="mb-2"><a href="register-product.html">Registro producto</a></li>
+            <li class="mb-2"><a href="index_business.html#buscar">Buscar</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h6 class="fw-bold mb-3">Soporte</h6>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="#">Centro de ayuda</a></li>
+            <li class="mb-2"><a href="#">Términos y condiciones</a></li>
+            <li class="mb-2"><a href="#">Política de privacidad</a></li>
+            <li class="mb-2"><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h6 class="fw-bold mb-3">Contacto</h6>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>TechFact, Santiago</p>
+          <p class="mb-2"><i class="bi bi-envelope me-2"></i>soporte@techfact.cl</p>
+          <p class="mb-2"><i class="bi bi-phone me-2"></i>+56 2 2345 6789</p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6"><p class="mb-0">&copy; 2025 Dispositivos Tecnológicos. Todos los derechos reservados.</p></div>
+        <div class="col-md-6 text-md-end"><p class="mb-0">Desarrollado por TechFact S.A.</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

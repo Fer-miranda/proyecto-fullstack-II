@@ -1,0 +1,110 @@
+
+/* Business Frontpage–like theme overrides (drop-in) */
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+:root{
+  --sb-primary: #0d6efd;
+  --sb-dark: #212529;
+  --sb-muted: #6c757d;
+  --sb-light: #f8f9fa;
+}
+
+/* Base */
+html, body{font-family: "Lato", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
+body{background-color:#ffffff;color:#212529;}
+
+/* Navbar — light, airy */
+.navbar{transition: box-shadow .2s ease, background-color .2s ease;}
+.navbar.bg-primary, .navbar.navbar-dark{
+  background: #fff !important;
+}
+.navbar .navbar-brand{color:#0d6efd !important; font-weight:900; letter-spacing:.2px;}
+.navbar .nav-link{color:#212529 !important; font-weight:600;}
+.navbar .nav-link:hover{color:#0d6efd !important;}
+.navbar .btn{border-radius: 2rem; font-weight:700;}
+.navbar .btn.btn-light{background-color:#0d6efd;color:#fff;border:0;}
+.navbar .btn.btn-outline-light{color:#0d6efd;border-color:#0d6efd;}
+.navbar.fixed-top{box-shadow: 0 8px 20px rgba(0,0,0,.06);}
+
+/* Masthead (hero) */
+.hero-section{
+  padding: 8rem 0;
+  background: linear-gradient(rgba(46, 47, 49, 0.75), rgba(47, 50, 53, 0.75)), url('foto.jpg') center/cover no-repeat;
+  color:#fff;
+}
+/* Remove carousel chrome inside hero, keep first slide feel */
+.hero-section .carousel-indicators,
+.hero-section .carousel-control-prev,
+.hero-section .carousel-control-next{display:none;}
+.hero-section .carousel-item{height:auto;}
+.hero-section .carousel-caption{background: transparent; padding:0;}
+.hero-section h1{font-weight:900; line-height:1.1;}
+.hero-section p.lead{font-weight:400; opacity:.95;}
+.btn.btn-custom{border-radius: 2rem; padding:.85rem 1.25rem; font-weight:800; text-transform: none; letter-spacing:.2px;}
+
+.hero-section2{
+  padding: 8rem 0;
+  background: linear-gradient(rgba(46, 47, 49, 0.75), rgba(47, 50, 53, 0.75)), url('laptop2.jpg') center/cover no-repeat;
+  color:#fff;
+}
+
+.hero-section3{
+  padding: 8rem 0;
+  background: linear-gradient(rgba(46, 47, 49, 0.75), rgba(47, 50, 53, 0.75)), url('phone2.jpg') center/cover no-repeat;
+  color:#fff;
+}
+
+/* Search card floating */
+.search-section{
+  background:#fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  margin-top:-4rem;
+  padding:2rem;
+}
+
+/* Feature blocks */
+.feature-card{
+  border:0;
+  border-radius:1rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.feature-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.10);
+}
+.feature-icon{font-size:3rem; color:var(--sb-primary);}
+
+/* Cards for results */
+.card.h-100.shadow-sm{border:0; box-shadow: 0 8px 22px rgba(0,0,0,.06) !important; border-radius: 1rem;}
+.card-header.bg-light{background:#f8fafc !important; border-bottom:1px solid rgba(0,0,0,.06); border-top-left-radius:1rem; border-top-right-radius:1rem;}
+.card-footer.bg-light{background:#f8fafc !important; border-top:1px solid rgba(0,0,0,.06); border-bottom-left-radius:1rem; border-bottom-right-radius:1rem;}
+
+/* Buttons */
+.btn-primary{background:#0d6efd; border-color:#0d6efd; border-radius:2rem; font-weight:800;}
+.btn-primary:hover{background:#0b5ed7; border-color:#0b5ed7;}
+.btn-success{border-radius:2rem; font-weight:800;}
+.btn-outline-light{border-radius:2rem;}
+
+/* Forms */
+.form-control, .form-select{border-radius:.75rem;}
+.form-control.error{border-color:#dc3545;}
+.form-control.success{border-color:#198754;}
+.error-message{color:#dc3545; font-size:.875rem; margin-top:.25rem;}
+
+/* Sections */
+#como-funciona{background:#f8f9fc;}
+#registro{background:#f9fbff;}
+section.container.my-5 h3{font-weight:900;}
+
+/* Footer — dark slab */
+.footer{
+  background:#212529;
+  color:#e9ecef;
+  padding: 3rem 0 1rem;
+}
+.footer .footer-links a{color:#ced4da;}
+.footer .footer-links a:hover{color:#fff;}
+.footer hr{border-color:rgba(255,255,255,.15);}
