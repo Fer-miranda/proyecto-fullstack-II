@@ -7,7 +7,7 @@ let productoId = 1;
 // === Productos iniciales de ejemplo ===
 productos = [
   { id: productoId++, tipo:"Teléfono", marca:"Apple",   modelo:"iPhone 13",      anio:2021, precio:550000, numeroSerie:"APL12345", robado:false, venta:true, historialPropietarios:[] },
-  { id: productoId++, tipo:"Teléfono", marca:"Samsung", modelo:"Galaxy S22",     anio:2022, precio:480000, numeroSerie:"SMS56789", robado:false, venta:true, historialPropietarios:[] },
+  { id: productoId++, tipo:"Teléfono", marca:"Samsung", modelo:"Galaxy S22",     anio:2022, precio:480000, numeroSerie:"SMS56789", robado:true, venta:false, historialPropietarios:[] },
   { id: productoId++, tipo:"Computador", marca:"Dell",  modelo:"XPS 13",         anio:2020, precio:600000, numeroSerie:"DLL24680", robado:false, venta:true, historialPropietarios:[] },
   { id: productoId++, tipo:"Computador", marca:"Apple", modelo:"MacBook Air M1", anio:2021, precio:750000, numeroSerie:"APL97531", robado:false, venta:true, historialPropietarios:[] }
 ];
