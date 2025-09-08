@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TechFact</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <!-- New theme overrides -->
   <link rel="stylesheet" href="business-frontpage.css">
 </head>
+
 <body>
   <!-- Navbar (light) -->
   <nav class="navbar navbar-expand-lg fixed-top bg-white">
@@ -23,7 +24,6 @@
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#como-funciona">¿Cómo funciona?</a></li>
-          <li class="nav-item"><a class="nav-link" href="#buscar">Buscar</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
         <div class="d-flex">
@@ -33,112 +33,117 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero (masthead) -->
-  <section id="inicio" class="hero-section mt-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7">
-          <div class="carousel-caption position-static p-0 text-start">
-            <h1 class="display-4 fw-bold mb-4">Verificación confiable de teléfonos y computadores</h1>
-            <p class="lead mb-4">Consulta estado, historial y disponibilidad antes de comprar o vender.</p>
-            <a href="#buscar" class="btn btn-light btn-custom me-3"><i class="bi bi-search me-2"></i>Buscar Dispositivos</a>
-            <a href="register-product.html" class="btn btn-outline-light btn-custom"><i class="bi bi-plus-circle me-2"></i>Registrar Dispositivo</a>
+  <main>
+    <!-- Hero (masthead) -->
+    <section id="inicio" class="hero-section mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="carousel-caption position-static p-0 text-start">
+              <h1 class="display-4 fw-bold mb-4">Verificación confiable de teléfonos y computadores</h1>
+              <p class="lead mb-4">Consulta estado, historial y disponibilidad antes de comprar o vender.</p>
+              <a href="#buscar" class="btn btn-light btn-custom me-3"><i class="bi bi-search me-2"></i>Buscar
+                Dispositivos</a>
+              <a href="register-product.html" class="btn btn-outline-light btn-custom"><i
+                  class="bi bi-file-plus me-2"></i>Registrar Dispositivo</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Search card -->
-  <section id="buscar" class="container">
-    <div class="search-section">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold">Buscar Dispositivos</h2>
-        <p class="text-muted">Ingresa el número de serie o características del dispositivo</p>
+    <!-- Search card -->
+    <section id="buscar" class="container">
+      <div class="search-section">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold">Buscar Dispositivos</h2>
+          <p class="text-muted">Ingresa el número de serie o características del dispositivo</p>
+        </div>
+        <form id="searchForm" class="row g-3">
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="searchSerie" placeholder="Número de serie">
+            <div class="error-message" id="searchSerieError"></div>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="searchMarca" placeholder="Marca">
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="searchModelo" placeholder="Modelo">
+          </div>
+          <div class="col-md-3">
+            <select class="form-select" id="searchTipo">
+              <option value="">Tipo de dispositivo</option>
+              <option value="Teléfono">Teléfono</option>
+              <option value="Computador">Computador</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-3">
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="bi bi-search me-2"></i>Buscar
+            </button>
+          </div>
+        </form>
+        <div id="searchResults" class="mt-4"></div>
       </div>
-      <form id="searchForm" class="row g-3">
-<div class="col-md-3">
-          <input type="text" class="form-control" id="searchSerie" placeholder="Número de serie">
-          <div class="error-message" id="searchSerieError"></div>
-        </div>
-        <div class="col-md-3">
-          <input type="text" class="form-control" id="searchMarca" placeholder="Marca">
-        </div>
-        <div class="col-md-3">
-          <input type="text" class="form-control" id="searchModelo" placeholder="Modelo">
-        </div>
-        <div class="col-md-3">
-          <select class="form-select" id="searchTipo">
-            <option value="">Tipo de dispositivo</option>
-            <option value="Teléfono">Teléfono</option>
-            <option value="Computador">Computador</option>
-          </select>
-        </div>
-        <div class="col-12 col-md-3">
-          <button type="submit" class="btn btn-primary w-100">
-            <i class="bi bi-search me-2"></i>Buscar
-          </button>
-        </div>
-</form>
-      <div id="searchResults" class="mt-4"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Cómo funciona -->
-  <section id="como-funciona" class="py-5 mt-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">¿Cómo funciona nuestra plataforma?</h2>
-        <p class="text-muted">Simple, seguro y eficiente</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="card feature-card text-center p-4">
-            <div class="feature-icon"><i class="bi bi-person-plus"></i></div>
-            <h4 class="fw-bold mb-3">1. Regístrate</h4>
-            <p>Crea tu cuenta de forma gratuita y comienza a registrar tus dispositivos.</p>
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="py-5 mt-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">¿Cómo funciona nuestra plataforma?</h2>
+          <p class="text-muted">Simple, seguro y eficiente</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card feature-card text-center p-4">
+              <div class="feature-icon"><i class="bi bi-person-plus"></i></div>
+              <h4 class="fw-bold mb-3">1. Regístrate</h4>
+              <p>Crea tu cuenta de forma gratuita y comienza a registrar tus dispositivos.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card feature-card text-center p-4">
+              <div class="feature-icon"><i class="bi bi-plus-square"></i></div>
+              <h4 class="fw-bold mb-3">2. Registra tus dispositivos</h4>
+              <p>Agrega información detallada para mantener un historial completo.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card feature-card text-center p-4">
+              <div class="feature-icon"><i class="bi bi-search"></i></div>
+              <h4 class="fw-bold mb-3">3. Consulta y verifica</h4>
+              <p>Busca por modelo y verifica su estado antes de adquirir tu próximo dispositivo.</p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="card feature-card text-center p-4">
-            <div class="feature-icon"><i class="bi bi-plus-square"></i></div>
-            <h4 class="fw-bold mb-3">2. Registra tus dispositivos</h4>
-            <p>Agrega información detallada para mantener un historial completo.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card feature-card text-center p-4">
-            <div class="feature-icon"><i class="bi bi-search"></i></div>
-            <h4 class="fw-bold mb-3">3. Consulta y verifica</h4>
-            <p>Busca por modelo y verifica su estado antes de adquirir tu próximo dispositivo.</p>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-  
-  <section id="en-venta" class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">En venta ahora</h2>
-        <p class="text-muted">Explora dispositivos disponibles publicados por la comunidad</p>
-      </div>
-      <div id="gridEnVenta" class="row g-4"></div>
-      <div class="text-center mt-4">
-        <a href="#buscar" class="btn btn-light btn-custom"><i class="bi bi-search me-2"></i>Buscar más</a>
-        <a href="register-product.html" class="btn btn-light btn-custom"><i class="bi bi-plus-circle me-2"></i>Publicar dispositivo</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Resultados -->
-  <section class="container my-5">
-    <div id="resultadosContainer" style="display: none;">
-      <h3 class="mb-4">Resultados de Búsqueda</h3>
-      <div id="resultadosBusqueda" class="row"></div>
-    </div>
-  </section>
+    <section id="en-venta" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">En venta ahora</h2>
+          <p class="text-muted">Explora dispositivos disponibles publicados por la comunidad</p>
+        </div>
+        <div id="gridEnVenta" class="row g-4"></div>
+        <div class="text-center mt-4">
+          <a href="#buscar" class="btn btn-light btn-custom"><i class="bi bi-search me-2"></i>Buscar más</a>
+          <a href="register-product.html" class="btn btn-light btn-custom"><i
+              class="bi bi-plus-circle me-2"></i>Publicar dispositivo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultados -->
+    <section class="container my-5">
+      <div id="resultadosContainer" style="display: none;">
+        <h3 class="mb-4">Resultados de Búsqueda</h3>
+        <div id="resultadosBusqueda" class="row"></div>
+      </div>
+    </section>
+  </main>
+
 
   <!-- Footer -->
   <footer id="contacto" class="footer">
@@ -181,8 +186,12 @@
       </div>
       <hr class="my-4">
       <div class="row align-items-center">
-        <div class="col-md-6"><p class="mb-0">&copy; 2025 Dispositivos Tecnológicos. Todos los derechos reservados.</p></div>
-        <div class="col-md-6 text-md-end"><p class="mb-0">Desarrollado por TechFact S.A.</p></div>
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 Dispositivos Tecnológicos. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0">Desarrollado por TechFact S.A.</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -190,4 +199,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>

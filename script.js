@@ -1,10 +1,12 @@
 // Arreglos para almacenar usuarios y productos
-let usuarios = [];
-let productos = [];
-let usuarioId = 1;
-let productoId = 1;
+let usuarios = []; //arreglo vacío donde se guardan usuarios
+let productos = []; //arreglo vacío donde se guardan dispositivos
+let usuarioId = 1; //contador asignar ids a cada usuario, empieza en 1
+let productoId = 1; //contador asignar ids a dispositivos, empieza en 1
 
-// === Productos iniciales de ejemplo ===
+
+
+// === Productos iniciales de ejemplo === Precarga con 4 productos 3 en venta 1 robado
 productos = [
   { id: productoId++, tipo:"Teléfono", marca:"Apple",   modelo:"iPhone 13",      anio:2021, precio:550000, numeroSerie:"APL12345", robado:false, venta:true, historialPropietarios:[] },
   { id: productoId++, tipo:"Teléfono", marca:"Samsung", modelo:"Galaxy S22",     anio:2022, precio:480000, numeroSerie:"SMS56789", robado:true, venta:false, historialPropietarios:[] },
@@ -32,13 +34,15 @@ function showSuccess(inputId) {
   errorDiv.style.display = 'none';
 }
 
-function clearValidation(inputId) {
+function clearValidation(inputId) { //campo vacío o al resetear limpia mensaje de error
   const input = document.getElementById(inputId);
   const errorDiv = document.getElementById(inputId + 'Error');
   if (!input || !errorDiv) return;
   input.classList.remove('error', 'success');
   errorDiv.style.display = 'none';
 }
+
+//validadores
 
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -61,7 +65,6 @@ function validatePrice(price) {
 }
 
 // ---------------- Validación formularios ----------------
-// Solo corre si estamos en la página que SÍ tiene los formularios
 
 // === Usuario ===
 if (document.getElementById('formUsuario')) {
@@ -289,7 +292,7 @@ function mostrarResultados(listado) {
     card.classList.add("col-lg-4","col-md-6","mb-4");
 
     const statusBadges = [];
-    if (p.robado) statusBadges.push('<span class="badge bg-danger"><i class="bi bi-exclamation-triangle"></i> Robado</span>');
+    if (p.robado) statusBadges.push('<span class="badge bg-danger"><i class="bi bi-exclamation-triangle"></i> Robado/Extraviado</span>');
     if (p.venta)  statusBadges.push('<span class="badge bg-success"><i class="bi bi-tag"></i> En venta</span>');
 
     card.innerHTML = `
